@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Orange">
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="16dp"
+          android:layout_height="wrap_content"
+          android:background="@drawable/logo_home_page"
+          android:layout_centerVertical="true"
+          android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+              android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:id="@+id/lay1"
+                android:paddingLeft="24dp"
+                android:paddingRight="8dp"
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="10dp"
+                    android:id="@+id/innerlay1">
+
+                    <ImageView
+                        android:layout_width="145dp"
+                        android:layout_height="126dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:src="@drawable/home_icon"
+                        android:id="@+id/home"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="10dp"
+                    android:id="@+id/innerlay2">
+
+                    <ImageView
+                        android:layout_width="143dp"
+                        android:layout_height="130dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="12dp"
+                        android:src="@drawable/event"
+                        android:id="@+id/iv_event"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:orientation="vertical"
+                  android:weightSum="1">
+                  <LinearLayout
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:layout_marginRight="8dp"
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:id="@+id/lay2"
+                      android:paddingLeft="24dp"
+                      android:paddingRight="8dp"
+                      android:layout_marginTop="20dp"
+                      android:layout_weight="1.25">
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_height="fill_parent"
+                          android:layout_weight="1"
+                          android:id="@+id/innerlay3">
+
+                          <ImageView
+                              android:layout_width="145dp"
+                              android:layout_height="126dp"
+                              android:paddingTop="8dp"
+                              android:paddingBottom="8dp"
+                              android:src="@drawable/protfollio"
+                              android:id="@+id/iv_portfolio"
+                              />
+                      </LinearLayout>
+
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_height="fill_parent"
+                          android:layout_weight="1"
+                          android:id="@+id/innerlay4">
+
+                          <ImageView
+                              android:layout_width="145dp"
+                              android:layout_height="126dp"
+                              android:paddingTop="8dp"
+                              android:paddingBottom="8dp"
+                              android:src="@drawable/affiliate"
+                              android:id="@+id/iv_affiliate"
+                              />
+                      </LinearLayout>
+
+                  </LinearLayout>
+
+            <ImageView
+                android:id="@+id/home2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.90"
+                android:background="#7a9c2d"
+                android:drawableLeft="@mipmap/ic_launcher"
+                android:gravity="center"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:singleLine="true"
+                android:text="Home"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                android:textStyle="italic" />
+
+         <!--   <Button
+                android:id="@+id/about"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="3dp"
+                android:background="#7a9c2d"
+                android:drawableLeft="@drawable/icon_about"
+                android:gravity="center"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:singleLine="true"
+                android:text="About Us"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                android:textStyle="italic" />-->
+
+          <!--  <Button
+                android:id="@+id/portfolio"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="3dp"
+                android:background="#7a9c2d"
+                android:drawableLeft="@drawable/icon_port"
+                android:gravity="center"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:singleLine="true"
+                android:text="Portfolio"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/affiliate"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="3dp"
+                android:background="#7a9c2d"
+                android:drawableLeft="@drawable/icon_affil"
+                android:gravity="center"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:singleLine="true"
+                android:text="Affiliate"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/contact"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="3dp"
+                android:background="#7a9c2d"
+                android:drawableLeft="@drawable/icon_contact"
+                android:gravity="center"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:singleLine="true"
+                android:text="Contact"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/share"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="3dp"
+                android:background="#7a9c2d"
+                android:drawableLeft="@drawable/icon_share"
+                android:gravity="center"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:singleLine="true"
+                android:text="Share"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                android:textStyle="italic" />-->
+
+
+        </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_weight="1"
+                  android:orientation="vertical">
+                  <LinearLayout
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:layout_marginRight="8dp"
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:id="@+id/lay3"
+                      android:paddingLeft="24dp"
+                      android:paddingRight="8dp"
+                      android:layout_marginTop="20dp"
+                      android:layout_weight="1.25">
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_height="fill_parent"
+                          android:layout_weight="1"
+                          android:id="@+id/innerlay5">
+
+                          <ImageView
+                              android:layout_width="145dp"
+                              android:layout_height="126dp"
+                              android:paddingTop="8dp"
+                              android:paddingBottom="8dp"
+                              android:src="@drawable/share"
+                              android:id="@+id/ivshare"
+                              />
+                      </LinearLayout>
+
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_height="fill_parent"
+                          android:layout_weight="1"
+                          android:id="@+id/innerlay6">
+
+                          <ImageView
+                              android:layout_width="145dp"
+                              android:layout_height="126dp"
+                              android:paddingTop="8dp"
+                              android:paddingBottom="8dp"
+                              android:src="@drawable/contact"
+                              android:id="@+id/iv_contactus"
+                              />
+                      </LinearLayout>
+
+                  </LinearLayout>
+
+
+
+                  <!--   <Button
+                         android:id="@+id/about"
+                         android:layout_width="fill_parent"
+                         android:layout_height="50dp"
+                         android:layout_marginTop="3dp"
+                         android:background="#7a9c2d"
+                         android:drawableLeft="@drawable/icon_about"
+                         android:gravity="center"
+                         android:paddingLeft="20dip"
+                         android:paddingRight="20dip"
+                         android:singleLine="true"
+                         android:text="About Us"
+                         android:textAllCaps="false"
+                         android:textColor="#ffffff"
+                         android:textSize="23sp"
+                         android:textStyle="italic" />-->
+
+                  <!--  <Button
+                        android:id="@+id/portfolio"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#7a9c2d"
+                        android:drawableLeft="@drawable/icon_port"
+                        android:gravity="center"
+                        android:paddingLeft="20dip"
+                        android:paddingRight="20dip"
+                        android:singleLine="true"
+                        android:text="Portfolio"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="23sp"
+                        android:textStyle="italic" />
+
+                    <Button
+                        android:id="@+id/affiliate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#7a9c2d"
+                        android:drawableLeft="@drawable/icon_affil"
+                        android:gravity="center"
+                        android:paddingLeft="20dip"
+                        android:paddingRight="20dip"
+                        android:singleLine="true"
+                        android:text="Affiliate"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="23sp"
+                        android:textStyle="italic" />
+
+                    <Button
+                        android:id="@+id/contact"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#7a9c2d"
+                        android:drawableLeft="@drawable/icon_contact"
+                        android:gravity="center"
+                        android:paddingLeft="20dip"
+                        android:paddingRight="20dip"
+                        android:singleLine="true"
+                        android:text="Contact"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="23sp"
+                        android:textStyle="italic" />
+
+                    <Button
+                        android:id="@+id/share"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#7a9c2d"
+                        android:drawableLeft="@drawable/icon_share"
+                        android:gravity="center"
+                        android:paddingLeft="20dip"
+                        android:paddingRight="20dip"
+                        android:singleLine="true"
+                        android:text="Share"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="23sp"
+                        android:textStyle="italic" />-->
+
+
+              </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</LinearLayout>

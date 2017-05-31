@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context="com.bizhawkz.bizhawkzapplication.ContactUs">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="FILL YOUR INFORMATION"
+                android:textColor="#7a9c2d"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/connect_name"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/connect_email"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:hint="Mobile number"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/skype"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:hint="Skype"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="SERVICES OF INTEREST (CHECK ALL THAT APPLY)"
+                android:textColor="#7a9c2d"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid1"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" WP/Optimized Press Website"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid2"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" E-Commerce Website"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid3"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" Logo or Brochure Designing"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid4"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" Mobile Responsive Website"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid5"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" Search Engine Optimization"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid6"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" Translation"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid7"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" Customized Web Application"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid8"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" Video Editing"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid9"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text=" Flash Animation"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/chkAndroid10"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:checked="false"
+                android:text="  iPhone/Android App"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/s1"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp" />
+
+            <Spinner
+                android:id="@+id/s2"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp" />
+
+            <Spinner
+                android:id="@+id/s3"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp" />
+
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:gravity="left|top"
+                android:hint="Your Messgae"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#7a9c2d"
+                android:text="Submit"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
