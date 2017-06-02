@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg"
+    android:background="@drawable/home_bg"
     tools:context="com.bizhawkz.bizhawkzapplication.ContactUs">
 
     <ScrollView
@@ -25,7 +25,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="FILL YOUR INFORMATION"
-                android:textColor="#7a9c2d"
+                android:textColor="@color/Orange"
                 android:textSize="23sp"
                 android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="SERVICES OF INTEREST (CHECK ALL THAT APPLY)"
-                android:textColor="#7a9c2d"
+                android:textColor="@color/Orange"
                 android:textSize="13sp" />
 
             <CheckBox

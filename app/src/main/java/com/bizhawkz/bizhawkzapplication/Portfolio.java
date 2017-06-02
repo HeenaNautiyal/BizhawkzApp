@@ -1,63 +1,111 @@
 package com.bizhawkz.bizhawkzapplication;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.webkit.URLUtil;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 public class Portfolio extends AppCompatActivity {
-    WebView web_portfolio;
-    ProgressDialog progressBar;
+    Toolbar toolbar;
+    WebView webView;
+    ProgressDialog pb;
+    String url;
+    SwipeRefreshLayout mySwipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portfolio);
-        web_portfolio = (WebView) findViewById(R.id.web_portfolio);
-        web_portfolio.getSettings().setJavaScriptEnabled(true);
-        web_portfolio.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        mySwipeRefreshLayout = (SwipeRefreshLayout) this.findViewById(R.id.swipeContainer);
+        webView = (WebView) findViewById(R.id.web_home);
+        initToolBar();
 
-        final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 
-        progressBar = ProgressDialog.show(Portfolio.this, "Wait while page loads completely",
-                "Loading...");
+        pb = new ProgressDialog(Portfolio.this);
+        pb.setMessage("Please wait while Loading...");
+        pb.show();
+        pb.setCancelable(false);
 
-        web_portfolio.setWebViewClient(new WebViewClient() {
+
+        url="http://www.bizhawkz.com/about-bizhawkz/";
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                webView.loadUrl("javascript:document.getElementById(\"menu-item-25\").setAttribute(\"style\",\"display:none;\");");
+                webView.loadUrl("javascript:(function() { " +
+                        "document.getElementsByClassName('menu_wrapper')[0].style.display='none'; })()");
+                pb.dismiss();
+                mySwipeRefreshLayout.setRefreshing(false);
+            }
+
+            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if( URLUtil.isNetworkUrl(url) ) {
+                    return false;
+                }
 
-                view.loadUrl(url);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity( intent );
                 return true;
             }
-
-            public void onPageFinished(WebView view, String url) {
-
-                if (progressBar.isShowing()) {
-                    progressBar.dismiss();
-                }
-            }
-
-            @SuppressWarnings("deprecation")
-            public void onReceivedError(WebView view, int errorCode,
-                                        String description, String failingUrl) {
-
-                Toast.makeText(Portfolio.this, "Oh no! " + description,
-                        Toast.LENGTH_SHORT).show();
-                alertDialog.setTitle("Error");
-                alertDialog.setMessage(description);
-                alertDialog.setButton("OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                return;
-                            }
-                        });
-                alertDialog.show();
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+               /* Intent it = new Intent(Home.this, Network.class);
+                startActivity(it);}*/
             }
         });
+        webView.loadUrl(url);
+        mySwipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        pb = new ProgressDialog(Portfolio.this);
+                        pb.setMessage("Please wait while Loading...");
+                        pb.show();
+                        pb.setCancelable(false);
+                        webView.reload();
+                    }
+                }
+        );
+    }
 
-        web_portfolio.loadUrl("http://www.bizhawkz.com/portfolio/");
+    private void initToolBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Portfolio");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.back2_icon);
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent It = new Intent(Portfolio.this, MainActivity.class);
+                        startActivity(It);
+                    }
+                });
+    }
+
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (webView.canGoBack()) {
+            pb.show();
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+
     }
 }

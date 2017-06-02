@@ -4,12 +4,14 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -33,6 +35,7 @@ public class ContactUs extends AppCompatActivity {
     InputStream is = null;
     ProgressDialog pDialog;
     Spinner s1, s2, s3;
+    Toolbar toolbar;
     String first, second, third;
     String sp1[] = {"When would you like to start", "Immediatly",
             "Within 30 days", "30-60 days", "60-90 days"};
@@ -77,6 +80,7 @@ public class ContactUs extends AppCompatActivity {
         chk9 = (CheckBox) findViewById(R.id.chkAndroid9);
         chk10 = (CheckBox) findViewById(R.id.chkAndroid10);
         btn_submit = (Button) findViewById(R.id.btn_submit);
+        initToolBar();
 
         arr = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, sp1);
@@ -236,6 +240,23 @@ public class ContactUs extends AppCompatActivity {
                                       }
 
         );
+    }
+
+    private void initToolBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("ContactUs");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.back2_icon);
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent It = new Intent(ContactUs.this, MainActivity.class);
+                        startActivity(It);
+                    }
+                });
     }
 
     class AttemptLogin extends AsyncTask<String, String, String> {
