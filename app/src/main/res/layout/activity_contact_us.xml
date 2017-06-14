@@ -6,16 +6,28 @@
     android:orientation="vertical"
     android:background="@drawable/home_bg"
     tools:context="com.bizhawkz.bizhawkzapplication.ContactUs">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/Orange"
+        android:minHeight="?attr/actionBarSize"
+        android:titleTextColor="#ffffff">
 
+    </android.support.v7.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp" >
+        android:layout_below="@id/toolbar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:focusableInTouchMode="true"
             android:layout_marginRight="20dp"
             android:orientation="vertical" >
 
@@ -24,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+
                 android:text="FILL YOUR INFORMATION"
                 android:textColor="@color/Orange"
                 android:textSize="23sp"
@@ -32,10 +45,14 @@
             <EditText
                 android:id="@+id/connect_name"
                 android:layout_width="fill_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:textSize="16dp"
+                android:nextFocusDown = "@+id/connect_email"
+                android:background="@drawable/edittext"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                 android:hint="Name"
+                android:textColorHint="@color/colorPrimaryDark"
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:textColor="#000000" />
@@ -43,10 +60,14 @@
             <EditText
                 android:id="@+id/connect_email"
                 android:layout_width="fill_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:textSize="16dp"
+                android:nextFocusDown = "@+id/mobile"
+                android:background="@drawable/edittext"
                 android:hint="Email Address"
+
+                android:textColorHint="@color/colorPrimaryDark"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp"
                 android:textColor="#000000" />
@@ -54,10 +75,13 @@
             <EditText
                 android:id="@+id/mobile"
                 android:layout_width="fill_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:textSize="16dp"
+                android:nextFocusDown = "@+id/skype"
+                android:background="@drawable/edittext"
                 android:hint="Mobile number"
+                android:textColorHint="@color/colorPrimaryDark"
                 android:inputType="number"
                 android:paddingLeft="20dp"
                 android:textColor="#000000" />
@@ -65,11 +89,14 @@
             <EditText
                 android:id="@+id/skype"
                 android:layout_width="fill_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:textSize="16dp"
+                android:background="@drawable/edittext"
                 android:hint="Skype"
+                android:textColorHint="@color/colorPrimaryDark"
                 android:inputType="text"
+                android:nextFocusDown = "@+id/s1"
                 android:paddingLeft="20dp"
                 android:textColor="#000000" />
 
@@ -78,6 +105,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:text="SERVICES OF INTEREST (CHECK ALL THAT APPLY)"
                 android:textColor="@color/Orange"
                 android:textSize="13sp" />
@@ -87,6 +115,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
+                android:nextFocusDown = "@+id/chkAndroid2"
                 android:checked="false"
                 android:text=" WP/Optimized Press Website"
                 android:textColor="#000"
@@ -95,6 +124,7 @@
             <CheckBox
                 android:id="@+id/chkAndroid2"
                 android:layout_width="fill_parent"
+                android:nextFocusDown = "@+id/chkAndroid3"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
@@ -106,6 +136,7 @@
                 android:id="@+id/chkAndroid3"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
+                android:nextFocusDown = "@+id/chkAndroid4"
                 android:layout_marginTop="5dp"
                 android:checked="false"
                 android:text=" Logo or Brochure Designing"
@@ -118,6 +149,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
+                android:nextFocusDown = "@+id/chkAndroid5"
                 android:text=" Mobile Responsive Website"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -128,6 +160,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
+                android:nextFocusDown = "@+id/chkAndroid6"
                 android:text=" Search Engine Optimization"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -138,6 +171,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
+                android:nextFocusDown = "@+id/chkAndroid7"
                 android:text=" Translation"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -148,6 +182,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
+                android:nextFocusDown = "@+id/chkAndroid8"
                 android:text=" Customized Web Application"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -158,6 +193,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
+                android:nextFocusDown = "@+id/chkAndroid9"
                 android:text=" Video Editing"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -168,6 +204,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
+                android:nextFocusDown = "@+id/chkAndroid10"
                 android:text=" Flash Animation"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -177,35 +214,39 @@
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
+                android:nextFocusForward="@+id/s1"
                 android:checked="false"
-                android:text="  iPhone/Android App"
+                android:text="iPhone/Android App"
                 android:textColor="#000"
                 android:textSize="15sp" />
 
             <Spinner
                 android:id="@+id/s1"
                 android:layout_width="fill_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:imeOptions="actionNext"
+                android:background="@drawable/edittext"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp" />
 
             <Spinner
                 android:id="@+id/s2"
                 android:layout_width="fill_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
+                android:imeOptions="actionNext"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:background="@drawable/edittext"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp" />
 
             <Spinner
                 android:id="@+id/s3"
                 android:layout_width="fill_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:imeOptions="actionNext"
+                android:background="@drawable/edittext"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp" />
 
@@ -214,9 +255,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit"
+                android:background="@drawable/edittext"
                 android:gravity="left|top"
-                android:hint="Your Messgae"
+                android:textSize="16dp"
+                android:paddingTop="10dp"
+                android:hint="Your Message"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:nextFocusDown = "@+id/btn_submit"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp"
                 android:textColor="#000000" />
@@ -228,11 +273,10 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginTop="10dp"
-                android:background="#7a9c2d"
+                android:background="@drawable/edittext"
                 android:text="Submit"
                 android:textColor="#fff"
                 android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

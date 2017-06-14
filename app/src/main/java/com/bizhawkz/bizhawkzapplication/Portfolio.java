@@ -34,7 +34,7 @@ public class Portfolio extends AppCompatActivity {
         pb.setCancelable(false);
 
 
-        url="http://www.bizhawkz.com/about-bizhawkz/";
+        url="http://www.bizhawkz.com/portfolio/";
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
             @Override

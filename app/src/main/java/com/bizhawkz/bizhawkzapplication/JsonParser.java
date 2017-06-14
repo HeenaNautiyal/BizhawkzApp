@@ -8,8 +8,11 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,10 +20,13 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
- * Created by Heena on 5/29/2017.
+ * Created by heena on 6/6/2017.
  */
+
 public class JsonParser {
     String result = null;
     InputStream is = null;
@@ -33,23 +39,18 @@ public class JsonParser {
                                      ArrayList<NameValuePair> nameValuePairs) {
         // Making HTTP request
         StrictMode.setThreadPolicy(policy);
-
+        String SetServerString = "";
         // http post
         try {
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost(url);
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            HttpResponse response = httpclient.execute(httppost);
+            HttpGet httpget = new HttpGet(url+"?"+URLEncodedUtils.format(nameValuePairs, "utf-8"));
+            HttpResponse response = httpclient.execute(httpget);
             HttpEntity entity = response.getEntity();
             is = entity.getContent();
-
             // Log.e("log_tag", "connection success ");
-
         }
-
         catch (Exception e) {
             // Log.e("log_tag", "Error in http connection "+e.toString());
-
         }
         // convert response to string
         try {
@@ -59,8 +60,6 @@ public class JsonParser {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");
-                // Intent i = new Intent(getBaseContext(),Register2.class);
-                // startActivity(i);
             }
             is.close();
 

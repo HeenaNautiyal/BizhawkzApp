@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/home_bg"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:weightSum="1">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,41 +22,58 @@
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="80dp"
-        android:weightSum="1">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="328dp"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/Text1"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+       >
 
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="User Name"
-        android:textColorHint="#d3d3d3"
-        android:paddingLeft="8dp"
-        android:background="@drawable/edittext"
-        android:id="@+id/et_user"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Email Id"
-        android:paddingLeft="8dp"
-        android:background="@drawable/edittext"
-        android:layout_marginTop="20dp"
-        android:textColorHint="#d3d3d3"
-        android:id="@+id/et_email"/>
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext"
-            android:text="Submit"
-            android:textSize="18dp"
-            android:id="@+id/btn_submit"
-            android:layout_marginTop="20dp"
-            android:textColor="#ffffff"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+           android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+            <EditText
+                android:id="@+id/et_user"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/edittext"
+                android:hint="User Name"
+                android:paddingLeft="8dp"
+                android:singleLine="true"
+                android:textColorHint="#d3d3d3"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext"
+                android:hint="Email Id"
+                android:paddingLeft="8dp"
+                android:singleLine="true"
+                android:textColorHint="#d3d3d3"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext"
+                android:text="Submit"
+                android:layout_marginBottom="20dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

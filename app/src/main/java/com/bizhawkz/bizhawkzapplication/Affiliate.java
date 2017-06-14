@@ -35,7 +35,7 @@ public class Affiliate extends AppCompatActivity {
         pb.setCancelable(false);
 
 
-        url = "http://www.bizhawkz.com/";
+        url = "http://www.bizhawkz.com/affiliates/";
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
             @Override

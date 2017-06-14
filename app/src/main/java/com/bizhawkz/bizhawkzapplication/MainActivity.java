@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView home, about, share, contact, portfolio, affiliate;
+    SessionManager1 session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         home = (ImageView) findViewById(R.id.home);
         about = (ImageView) findViewById(R.id.iv_event);
         share = (ImageView) findViewById(R.id.ivshare);
+        session = new SessionManager1(getApplicationContext());
+        session.checkLogin();
+
         contact = (ImageView) findViewById(R.id.iv_contactus);
         affiliate = (ImageView) findViewById(R.id.iv_affiliate);
         portfolio = (ImageView) findViewById(R.id.iv_portfolio);
@@ -102,7 +106,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 toast.show();
             }
         }
-
-
+    }
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }
