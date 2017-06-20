@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/home_bg"
+    android:windowSoftInputMode="stateHidden"
     tools:context="com.bizhawkz.bizhawkzapplication.ContactUs">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -128,7 +129,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:checked="false"
-                android:text=" E-Commerce Website"
+                android:text="Business Strategy for online setups"
                 android:textColor="#000"
                 android:textSize="15sp" />
 
@@ -161,7 +162,7 @@
                 android:layout_marginTop="5dp"
                 android:checked="false"
                 android:nextFocusDown = "@+id/chkAndroid6"
-                android:text=" Search Engine Optimization"
+                android:text=" Social Media Optimization"
                 android:textColor="#000"
                 android:textSize="15sp" />
 
@@ -183,7 +184,7 @@
                 android:layout_marginTop="5dp"
                 android:checked="false"
                 android:nextFocusDown = "@+id/chkAndroid8"
-                android:text=" Customized Web Application"
+                android:text=" Customized Software Applications"
                 android:textColor="#000"
                 android:textSize="15sp" />
 
@@ -205,7 +206,7 @@
                 android:layout_marginTop="5dp"
                 android:checked="false"
                 android:nextFocusDown = "@+id/chkAndroid10"
-                android:text=" Flash Animation"
+                android:text=" Online Branding"
                 android:textColor="#000"
                 android:textSize="15sp" />
 
@@ -221,12 +222,13 @@
                 android:textSize="15sp" />
 
             <Spinner
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 android:id="@+id/s1"
                 android:layout_width="fill_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:imeOptions="actionNext"
-                android:background="@drawable/edittext"
+                android:nextFocusDown = "@+id/s2"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp" />
 
@@ -236,9 +238,9 @@
                 android:layout_height="40dp"
                 android:imeOptions="actionNext"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edittext"
                 android:inputType="textEmailAddress"
-                android:paddingLeft="20dp" />
+                android:paddingLeft="20dp"
+                />
 
             <Spinner
                 android:id="@+id/s3"
@@ -246,7 +248,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:imeOptions="actionNext"
-                android:background="@drawable/edittext"
+                android:nextFocusDown = "@+id/message"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp" />
 

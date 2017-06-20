@@ -69,9 +69,9 @@
                     android:id="@+id/innerlay2">
 
                     <ImageView
-                        android:layout_width="143dp"
-                        android:layout_height="130dp"
-                        android:paddingTop="14dp"
+                        android:layout_width="145dp"
+                        android:layout_height="126dp"
+                        android:paddingTop="12dp"
                         android:paddingBottom="12dp"
                         android:src="@drawable/event"
                         android:id="@+id/iv_event"

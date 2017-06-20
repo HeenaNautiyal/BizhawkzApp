@@ -47,8 +47,8 @@ public class ContactUs extends AppCompatActivity {
     Spinner s2;
     Spinner s3;String ip;
     String first, second, third,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10;
-    String sp1[] = {"When would you like to start?", "Immediately",
-            "Within 30 days", "30-60 days", "60-90 days"};
+    String sp1[] = {"   When would you like to start?", "   Immediately",
+            "   Within 30 days", "   30-60 days", "   60-90 days"};
     String sp2[] = {"Your monthly marketing budget:", "$500-$900",
             "$900-$1200", "$1200-$3000"};
     String sp3[] = {"Best time to call?", "8AM", "9AM", "10AM", "11AM",
@@ -79,6 +79,8 @@ public class ContactUs extends AppCompatActivity {
         email = (EditText) findViewById(R.id.connect_email);
         mobile = (EditText) findViewById(R.id.mobile);
         skype = (EditText) findViewById(R.id.skype);
+
+
         message = (EditText) findViewById(R.id.message);
         chk1 = (CheckBox) findViewById(R.id.chkAndroid1);
         chk2 = (CheckBox) findViewById(R.id.chkAndroid2);
@@ -118,11 +120,9 @@ public class ContactUs extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 first = parent.getItemAtPosition(position).toString();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
-
             }
         });
 
@@ -138,7 +138,6 @@ public class ContactUs extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
-
             }
         });
 
@@ -154,7 +153,6 @@ public class ContactUs extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
-
             }
         });
 
@@ -280,8 +278,6 @@ public class ContactUs extends AppCompatActivity {
 
                                                   } else {
                                                       new AttemptLogin().execute();
-
-
                                                   }
                                               } else {
                                                   Toast.makeText(getApplicationContext(),
@@ -361,7 +357,7 @@ public class ContactUs extends AppCompatActivity {
                     myMsg.setTextSize(20);
                     myMsg.setTextColor(Color.BLACK);
                     builder.setCustomTitle(myMsg);
-                    builder.setMessage("Thank you for contacting us.\n We will get back to you soon! ");
+                    builder.setMessage("Thank you for contacting us.\n We will get back to you soon. ");
                     builder.setPositiveButton("Continue",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,
